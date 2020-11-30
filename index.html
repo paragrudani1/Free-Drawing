@@ -1,0 +1,158 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://unpkg.com/konva@7.0.7/konva.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/ce7092a7bb.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Drawing</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        background-color: #f0f0f0;
+      }
+
+
+      /* Loader Code */
+      .lds-roller {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  z-index: 11;
+}
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+.lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgb(0, 0, 0);
+  margin: -4px 0 0 -4px;
+}
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+.lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hide {
+ top: -100%
+}
+
+    </style>
+  </head>
+  <body>
+  <div>
+    <div class="lds-roller hide"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    <div id="buttons">
+      <button id="save">Save as image</button>
+      <button id="mouse">Mouse</button>
+      <input type="button" value="Yellow" id="yellow" data-color="#f2ff00" />
+      <input type="button" value="Red" id="red" data-color="#ff0000"/>
+      <input type="button" value="Green" id="green" data-color="#0dff00"/>
+      <button id="pen">Pen</button>
+      <button id="eraser">Eraser</button>
+    </div>
+
+    <div id="parent-container"></div>
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBmrEfmAFX1RW_7ax8tYo164iRZajc-meg",
+    authDomain: "form-data-c5373.firebaseapp.com",
+    databaseURL: "https://form-data-c5373.firebaseio.com",
+    projectId: "form-data-c5373",
+    storageBucket: "form-data-c5373.appspot.com",
+    messagingSenderId: "71325289571",
+    appId: "1:71325289571:web:f2d0460556c71d0165bc56",
+    measurementId: "G-5W10Q60FXS"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+    <script src="./app.js"></script>
+  </body>
+</html>
